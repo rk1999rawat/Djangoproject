@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <style>
+            p{
+                font-size: 30px;
+                font-style: italic;
+                color: #abcdef;
+
+
+
+            }
+        </style>
+    </head> 
+
+    <body>
+        {% include "index.html" %}
+        {% block head %}
+        {% endblock %}
+        <form method="post" action="/users/aftersignup/">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <input type="Submit" value="Singin">
+            <a href="/users/singin/">Already registered</a>
+
+        </form>
+        
+
+
+
+    </body>
+</html>
+<!--form.as_table,form.as_li,for localhost write /singup/ -->
